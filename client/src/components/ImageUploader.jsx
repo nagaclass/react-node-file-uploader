@@ -18,6 +18,14 @@ const ImageUploader = ({ onSuccess }) => {
       return;
     }
 
+    // ** Validate image type **
+    for (const file of files) {
+      if (file["type"].split("/")[0] !== "image") {
+        toast.error("Allowed only Image");
+        return;
+      }
+    }
+
     const formData = new FormData();
 
     for (let i = 0; i < files.length; i++) {
@@ -39,7 +47,13 @@ const ImageUploader = ({ onSuccess }) => {
         </div>
         <header>Drag & Drop to Upload File</header>
         <span>OR</span>
-        <input type="file" multiple className="custom-file-input" onChange={onChangeHandler} />
+        <input
+          type="file"
+          multiple
+          className="custom-file-input"
+          accept="image/*"
+          onChange={onChangeHandler}
+        />
       </div>
       <button className="upload-btn">Upload</button>
     </form>

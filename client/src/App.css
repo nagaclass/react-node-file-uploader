@@ -9,6 +9,14 @@
   margin: 40px auto;
 }
 
+.image-thumbnails {
+  width: 200px;
+  height: auto;
+  border: 2px solid #5256ad;
+  padding: 5px;
+  margin: 0 10px;
+}
+
 .drag-area {
   background: #5256ad;
   width: 100%;

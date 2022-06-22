@@ -8,7 +8,7 @@ const ImagePreviewer = ({ files }) => {
   return files.map((file, idx) => (
     <img
       key={idx}
-      style={{ maxWidth: "200px" }}
+      className="image-thumbnails"
       src={`${END_POINTS.base}/${file.filename}`}
       alt={file.originalname}
     />
